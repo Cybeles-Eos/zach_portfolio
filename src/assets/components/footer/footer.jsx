@@ -7,7 +7,7 @@ function Footer(){
          <footer className={style.foo}>
             <section className={style.foo_body}>
                <h1 className={`${style.logo}`}><span>{codepen}</span>zach</h1>
-               <p>© 2025 Dawn Izach. This website was thoughtfully designed and developed using HTML, Tailwind, CSS, JavaScript and ReactVite to provide a smooth, responsive, and user-friendly experience across all devices.</p>
+               <p>© 2025 zach. All rights reserved. Built with HTML, Tailwind CSS, JavaScript, and React + Vite to deliver a seamless, responsive experience. Need a website or frontend help? Email me at — cruzdawn58@gmail.com.</p>
                <div className={style.foo_soc_term}>
                   <div className={style.term_box}>
                      <p>Privacy Policy</p>
