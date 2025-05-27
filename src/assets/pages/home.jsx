@@ -41,7 +41,6 @@ function Home(){
                   </div>
                </div>   
 
-            
             </section>
 
             <div className="sticky max-[990px]:w-full w-fit max-[990px]:left-auto left-[50%] max-[990px]:translate-x-0 transform translate-x-[-50%] z-20 bottom-5">
