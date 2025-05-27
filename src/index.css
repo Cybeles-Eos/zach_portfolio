@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Billing';
+  src: url('/BillingLottre.ttf');
+}
 
 :root {
   --inter: 'Inter', sans-serif;
@@ -11,6 +15,12 @@
   --grayM:#878787;
   --shadow: #2A2A2A;
   --whiteM: #F4F4F4;
+
+  --billing-lott: 'Billing', sans-serif;
+}
+
+img{
+  -webkit-user-drag: none;
 }
 
 /* @theme {
@@ -64,6 +74,18 @@ body{
     #97D7FF
   );
 }
+
+#title_intro{
+  font-family: var(--billing-lott);
+  /* color: var(--bg-clr); */
+  color: var(--text-clr);
+  /*         clamp(MIN, PREFERRED, MAX)    */
+
+}
+
+
+
+
 .active{
   background: linear-gradient(
     #0074BD,
@@ -75,10 +97,11 @@ body{
   @apply flex justify-center items-center;
 }
 
+
 [data-theme='dark'] {
-  --text-clr: #F4F4F4;
+  --text-clr: #fafafa;
   --bg-clr: #070707;
-  --navigator-bg: #19191900;
+  --navigator-bg: #070707;
   --navigator-brd: #2A2A2A;
   --img-opa: 0.4;
 
@@ -116,4 +139,21 @@ body{
     top: -18rem;
     rotate: -178deg;
   }
+}
+
+
+.wave {
+  display: inline-block;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
