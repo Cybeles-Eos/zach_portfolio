@@ -28,9 +28,9 @@ function Home(){
                      Crafting Websites
                      <span className="max-[430px]:top-[-10.8vw] max-[430px]:left-[12vw] max-[650px]:top-[-10.5vw] max-[650px]:left-[13.4vw] absolute text-[13px] top-[2vw] min-[1200px]:top-[1.5rem] left-[3.4vw] min-[1200px]:left-[2.4rem]">2022  *  2025</span>
                   </h1>
-                  <p className="max-[430px]:mx-[1.08rem] max-[650px]:mt-[1rem] max-[650px]:mx-[1.5rem] poppins_font max-w-[500px] text-[14px] text-center text-[var(--grayM)]"><span className="wave">👋</span> Hi, I’m Zach a creative frontend developer. I design and build clean, responsive, and user-friendly websites that bring ideas to life.</p>
+                  <p id="title_label" className="max-[430px]:mx-[1.08rem] max-[650px]:mt-[1rem] max-[650px]:mx-[1.5rem] poppins_font relative max-w-[500px] text-[14px] text-center text-[var(--grayM)]"><span className="wave">👋</span> Hi, I’m Zach a creative frontend developer. I design and build clean, responsive, and user-friendly websites that bring ideas to life.</p>
                   
-                  <div className="flex gap-[1rem] mt-9">
+                  <div id="title_btns" className="relative flex gap-[1rem] mt-9">
                      <button id="ss" className="poppins_font flex-center rounded-md cursor-pointer gap-3 px-[1rem] py-[.6rem] text-[13px] text-[var(--foo-lg)] bg-[var(--text-clr)]">
                         {right_i}
                         Go to projects

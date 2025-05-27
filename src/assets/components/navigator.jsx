@@ -10,12 +10,18 @@ function Navigator({active}){
 
    const switchTheme = ()=> {
       const html = document.documentElement; // <html>
-
       const currentTheme = html.getAttribute("data-theme");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
+     
+      let theme = currentTheme === "dark" ? "light" : "dark";
 
-      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("themeSave", theme);
+      html.setAttribute("data-theme", theme);
    };
+
+   useEffect(()=>{
+      const html = document.documentElement; // <html>
+      html.setAttribute("data-theme", localStorage.getItem("themeSave"));
+   }, []);
 
    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 650);
    //Show menu button if less than 650px

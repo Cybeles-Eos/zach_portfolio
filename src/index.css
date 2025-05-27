@@ -33,13 +33,14 @@ body{
   background-color: var(--bg-clr);
 }
 
-@layer base{
+@layer base {
   #logo_nav{
     font-family: var(--poppins);
     color: var(--text-clr);
   }
   h1, p, a{
     font-family: var(--inter);
+    @apply antialiased;
   }
   .poppins_font{
     font-family: var(--poppins);
@@ -47,6 +48,7 @@ body{
   .inter_font{
     font-family: var(--inter);
   }
+  
 }
 
 @layer components {
@@ -110,8 +112,6 @@ body{
   color: var(--text-clr);
 
 }
-
-
 
 
 .active{
@@ -185,3 +185,50 @@ body{
   60% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
 }
+
+
+#title_intro::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 101%;
+  background-color: var(--bg-clr);
+  z-index: 2;
+  
+  height: 80%;
+  animation: slideUp 700ms cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+  animation-delay: 1.5s;
+}
+@keyframes slideUp{
+  to{
+    height: 0%;
+  }
+}
+@media screen and (max-width: 650px) {
+  #title_intro::before{
+    height: 120%;
+    top: -2rem;
+  }
+}
+
+#title_label::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  height: 100%;
+  background-color: var(--bg-clr);
+  animation: slideUp 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+  animation-delay: 1.5s;
+}
+
+#title_btns::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background-color: var(--bg-clr);
+  animation: slideUp 600ms cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+  animation-delay: 1.5s;
+}
+
