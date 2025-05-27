@@ -6,7 +6,7 @@ import Logo from "./logo"
 function Nav(){
    return(
       <>
-         <nav className="w-full h-16 px-4">
+         <nav className="w-full h-16 px-4 absolute">
             <div className="max-w-[1250px] h-full mx-auto py-1 flex justify-between items-end">
                <Logo />
 

@@ -47,7 +47,7 @@ body{
     color: var(--whiteM);
     font-weight: 300;
   
-  
+    user-select: none;
   }
 }
 
@@ -97,23 +97,23 @@ body{
   
 }
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
   width: 0px;
   height: 0px;
-}
+} */
 
 
 
 
 .spiral-animation{
-  top: -32rem;
+  top: -36rem;
   rotate: -150deg;
   animation: showTop 1.5s ease forwards;
   animation-delay: 200ms;
 }
 @keyframes showTop{
   to{
-    top: -22rem;
+    top: -18rem;
     rotate: -178deg;
   }
 }
