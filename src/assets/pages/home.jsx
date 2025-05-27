@@ -24,11 +24,11 @@ function Home(){
                <img className="spiral-animation h-[30rem] select-none min-w-min absolute opacity-[var(--img-opa)] left-1/2 transform -translate-x-1/2" src={spiral_img} alt="" />
                
                <div className="max-[650px]:mt-[13rem] w-full flex flex-col items-center relative z-30 mt-[12rem]">
-                  <h1 id="title_intro" className=" max-[650px]:my-[1.7rem] max-[650px]:leading-[18vw] max-[650px]:text-[23vw]  relative h-fit w-fit text-center min-[1200px]:text-[7.7rem] text-[10.1vw] uppercase">
+                  <h1 id="title_intro" className="max-[430px]:leading-[20vw] max-[430px]:text-[24.5vw] max-[650px]:my-[1.7rem] max-[650px]:leading-[18vw] max-[650px]:text-[23vw]  relative h-fit w-fit text-center min-[1200px]:text-[7.7rem] text-[10.1vw] uppercase">
                      Crafting Websites
-                     <span className="max-[650px]:top-[-10vw] max-[650px]:left-[13.4vw] absolute text-[13px] top-[2vw] min-[1200px]:top-[1.5rem] left-[3.4vw] min-[1200px]:left-[2.4rem]">2022  *  2025</span>
+                     <span className="max-[430px]:top-[-10.8vw] max-[430px]:left-[12vw] max-[650px]:top-[-10.5vw] max-[650px]:left-[13.4vw] absolute text-[13px] top-[2vw] min-[1200px]:top-[1.5rem] left-[3.4vw] min-[1200px]:left-[2.4rem]">2022  *  2025</span>
                   </h1>
-                  <p className="max-[650px]:mt-[1rem] max-[650px]:mx-[1.5rem] poppins_font max-w-[500px] text-[14px] text-center text-[var(--grayM)]"><span className="wave">👋</span> Hi, I’m Zach a creative frontend developer. I design and build clean, responsive, and user-friendly websites that bring ideas to life.</p>
+                  <p className="max-[430px]:mx-[1.08rem] max-[650px]:mt-[1rem] max-[650px]:mx-[1.5rem] poppins_font max-w-[500px] text-[14px] text-center text-[var(--grayM)]"><span className="wave">👋</span> Hi, I’m Zach a creative frontend developer. I design and build clean, responsive, and user-friendly websites that bring ideas to life.</p>
                   
                   <div className="flex gap-[1rem] mt-9">
                      <button id="ss" className="poppins_font flex-center rounded-md cursor-pointer gap-3 px-[1rem] py-[.6rem] text-[13px] text-[var(--foo-lg)] bg-[var(--text-clr)]">

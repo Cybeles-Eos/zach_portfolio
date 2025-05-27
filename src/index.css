@@ -43,6 +43,9 @@ body{
   .poppins_font{
     font-family: var(--poppins);
   }
+  .inter_font{
+    font-family: var(--inter);
+  }
 }
 
 @layer components {
