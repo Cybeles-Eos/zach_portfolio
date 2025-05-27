@@ -3,7 +3,7 @@ const Logo = ()=>{
   
    return(
       <>
-         <h1 id="logo_nav" className="flex z-4 w-fit font-bold text-[1.5rem] relative italic tracking-[-1px] select-none cursor-pointer items-center"><span className='block mt-[3px] h-fit mb-[2px]'>{codepen}</span>zach</h1>
+         <h1 id="logo_nav" className="flex z-50 w-fit font-bold text-[1.5rem] relative italic tracking-[-1px] select-none cursor-pointer items-center"><span className='block mt-[3px] h-fit mb-[2px]'>{codepen}</span>zach</h1>
       </>
    )
 }
