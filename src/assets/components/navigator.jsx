@@ -27,23 +27,22 @@ function Navigator({active}){
       // Clean up on unmount
       return () => window.removeEventListener('resize', handleResize);
    }, []);
-   const [rotation, setRotation] = useState(0);
    const toggleLinks = () => {
       const links = document.querySelectorAll('.link');
       links.forEach(link => {
          if (link.classList.contains('hide-links')) {
             link.classList.remove('hide-links');
             link.classList.add('show-links');
-            setRotation(180);
+            document.querySelector('.arrow').style.rotate = '180deg';
          } else {
-            setRotation(0);
             link.classList.remove('show-links');
             link.classList.add('hide-links');
+            document.querySelector('.arrow').style.rotate = '0deg';
          }
       });
    };
 
-   let menu = <button onClick={toggleLinks} className="w-[2.5rem] flex-center cursor-pointer hover:opacity-[.8]"><span className={`rotate-[${rotation}deg] transition duration-[400ms]`}>{arrow_i}</span></button>;
+   let menu = <button onClick={toggleLinks} className="w-[2.5rem] flex-center cursor-pointer hover:opacity-[.8]"><span className={`arrow transition duration-[400ms]`}>{arrow_i}</span></button>;
 
    return(
       <>
