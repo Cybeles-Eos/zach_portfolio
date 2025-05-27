@@ -206,7 +206,7 @@ body{
 }
 @media screen and (max-width: 650px) {
   #title_intro::before{
-    height: 120%;
+    height: 125%;
     top: -2rem;
   }
 }
