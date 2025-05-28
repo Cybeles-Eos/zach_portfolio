@@ -20,7 +20,7 @@ function Navigator({active}){
 
    useEffect(()=>{
       const html = document.documentElement; // <html>
-      let theme = localStorage.getItem("themeSave") || 'dark';
+      let theme = localStorage.getItem("themeSave") || 'light';
       html.setAttribute("data-theme", theme);
    }, []);
 
