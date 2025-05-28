@@ -13,9 +13,17 @@ function About(){
 
    return(
       <>
-         <main className="w-full h-[100rem] p-3 relative">
-            <h1 className="text-white">About</h1>
-            <Navigator active="about"/>
+         <main className="max-w-[1100px] mx-auto relative mb-10">
+
+            <section className="w-full h-[60rem] z-10 relative overflow-hidden p-4">
+               <h1>About</h1>
+               
+            </section>
+
+            <div className="sticky max-[990px]:w-full w-fit max-[990px]:left-auto left-[50%] max-[990px]:translate-x-0 transform translate-x-[-50%] z-20 bottom-5">
+               <Navigator active="about"/>
+            </div>
+            
          </main>
          <Footer />
       </>

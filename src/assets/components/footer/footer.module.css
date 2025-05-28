@@ -5,6 +5,7 @@
    padding-bottom: 2.5rem;
    background-color: var(--foo-bg);
    margin-top: 1rem;
+  
 }
 
 .logo{
@@ -20,6 +21,7 @@
    font-family: var(--poppins);
    display: flex;
    align-items: center;
+    z-index: 50;
 }.logo > span{
    display: block;
    margin-top: 3px;
@@ -47,6 +49,7 @@
    margin-top: 1.2rem;
    margin-inline: 1rem;
    color: var(--grayM);
+    z-index: 50;
 }
 
 .foo_soc_term{
@@ -83,6 +86,7 @@
 .term_box > p{
    cursor: pointer;
    font-family: var(--poppins);
+    z-index: 50;
 }
 .soc_box{
    display: flex;
@@ -95,6 +99,7 @@
   color: var(--grayM);
   font-family: var(--poppins);
   text-decoration: none;
+  z-index: 50;
 }
 .con{
    font-weight: 500;
