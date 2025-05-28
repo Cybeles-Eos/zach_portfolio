@@ -20,7 +20,8 @@ function Navigator({active}){
 
    useEffect(()=>{
       const html = document.documentElement; // <html>
-      html.setAttribute("data-theme", localStorage.getItem("themeSave"));
+      let theme = localStorage.getItem("themeSave") || 'dark';
+      html.setAttribute("data-theme", theme);
    }, []);
 
    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 650);
