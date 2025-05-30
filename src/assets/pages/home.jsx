@@ -3,7 +3,9 @@ import { useEffect} from "react";
 import Footer from "../components/footer/footer.jsx"
 import Navigator from "../components/navigator.jsx"
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
+
+import { useInView } from "react-intersection-observer";
 
 import spiral_img from '/done.png'
 import lineSp from '/rolls.png'
@@ -12,7 +14,20 @@ import me from '/zach1.jpg'
 function Home(){
    const right_i = <svg xmlns="http://www.w3.org/2000/svg" className="mt-[.6px]" width="20" height="20" fill="var(--bg-clr)" viewBox="0 0 16 16"><path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>;   
    const mouse_i = <svg xmlns="http://www.w3.org/2000/svg" className={`mouse rotate-[180deg]`} viewBox="0 0 24 24" width="24" height="24" fill="var(--text-clr)" ><path d="M11.1411 4C9.5587 4 8.75361 4.16876 8.01266 4.56502C7.38342 4.90155 6.90155 5.38342 6.56502 6.01266C6.16876 6.75361 6 7.5587 6 9.14111V14.8589C6 16.4413 6.16876 17.2464 6.56502 17.9873C6.90155 18.6166 7.38342 19.0985 8.01266 19.435C8.75361 19.8312 9.5587 20 11.1411 20H12.8589C14.4413 20 15.2464 19.8312 15.9873 19.435C16.6166 19.0985 17.0985 18.6166 17.435 17.9873C17.8312 17.2464 18 16.4413 18 14.8589V9.14111C18 7.5587 17.8312 6.75361 17.435 6.01266C17.0985 5.38342 16.6166 4.90155 15.9873 4.56502C15.2464 4.16876 14.4413 4 12.8589 4H11.1411ZM11.1411 2H12.8589C14.8728 2 15.9528 2.27848 16.9305 2.8014C17.9083 3.32432 18.6757 4.09169 19.1986 5.06946C19.7215 6.04724 20 7.12721 20 9.14111V14.8589C20 16.8728 19.7215 17.9528 19.1986 18.9305C18.6757 19.9083 17.9083 20.6757 16.9305 21.1986C15.9528 21.7215 14.8728 22 12.8589 22H11.1411C9.12721 22 8.04724 21.7215 7.06946 21.1986C6.09169 20.6757 5.32432 19.9083 4.8014 18.9305C4.27848 17.9528 4 16.8728 4 14.8589V9.14111C4 7.12721 4.27848 6.04724 4.8014 5.06946C5.32432 4.09169 6.09169 3.32432 7.06946 2.8014C8.04724 2.27848 9.12721 2 11.1411 2ZM11 6H13V11H11V6Z"></path></svg>;
-   
+
+   const [pro, setPro] = useState(false);
+   const { ref: profile, inView: isVisible} = useInView({
+      threshold: .3, 
+      triggerOnce: true,     
+      rootMargin: "0px 0px 0px 0px"
+   });
+
+   useEffect(() => {
+   setPro(isVisible);
+   }, [isVisible]); // ✅ This will re-run when visibility changes
+
+
+
    const location = useLocation();
    useEffect(() => {
       window.scrollTo({ top: 0});
@@ -60,18 +75,18 @@ function Home(){
             </section>
 
             <section className="about-me max-[650px]:gap-[3.5rem] max-w-[1350px] z-10 mt-[7rem] relative py-15 gap-[1rem] overflow-hidden mx-auto ">
-               <div className="relative max-[650px]:left-[-4rem] max-[800px]:left-[-9rem] h-[20rem]"> {/*rotate-[-30deg]*/}
+               <div ref={profile} className={`${pro ? 'prf_' : ''} transition ease-in-out duration-[1.6s] relative max-[650px]:left-[-4rem] opacity-[0] rotate-[-40deg] max-[800px]:left-[-9rem] h-[20rem]`}> {/*rotate-[-30deg]*/}
                   <img src={me} className="absolute min-w-[9rem] left-[15rem] h-[9rem] top-[2rem] rounded-[20rem] z-10" alt="" />
                   <button onClick={handleCopy} id="myGmail" className="left-[10rem] bg-[var(--text-clr)] z-10 absolute bottom-2 text-[var(--bg-clr)] poppins_font h-[1.9rem] w-[10.5rem] rounded-[20rem] cursor-pointer text-[11px] py-[3px]">{buttonText}</button>
-                  <img src={lineSp} className="absolute select-none z-0 top-[-3rem] rotate-[-120deg] left-[-3rem] min-w-[24rem] h-[24rem] opacity-[50%]" alt="" />
+                  <img src={lineSp} className="absolute select-none z-0 top-[-3rem]  rotate-[-120deg] left-[-3rem] min-w-[24rem] h-[24rem] opacity-[50%]" alt="" />
                </div>
                <div className="z-20 max-w-[700px] justify-self-end p-5 flex flex-col h-[100%]">
-                  <div className="flex w-[100%] mb-[1.85rem] items-center justify-between flex-wrap gap-3">
+                  <div className={`${pro ? 'prf_i' : ''} prf_head opacity-0 transition-all duration-[1s] ease-in-out delay-[200ms] flex w-[100%] mb-[1.85rem] items-center justify-between flex-wrap gap-3`}>
                      <h1 className="text-[var(--text-clr)] leading-[28px] font-light text-[1.6rem]">Welcome to my world</h1>
                      <button className="bg-[var(--text-clr)] select-none text-[var(--bg-clr)] poppins_font h-[1.9rem] w-[7.5rem] rounded-[20rem] cursor-pointer text-[13px] py-[3px]">about me</button>
                   </div>
-                  <p className="text-[var(--grayM)] text-[14px] mb-[1.9rem] leading-[25px]">I’m a frontend developer with a sharp eye for clean, minimal UI. I love crafting intuitive user interfaces using HTML, CSS, JavaScript and React and I often lean into Tailwind CSS for fast and consistent styling.</p>
-                  <p className="text-[var(--grayM)] text-[14px] mb-[1.75rem] leading-[25px]">While frontend is where I started, I’m currently diving into backend development to become a more well-rounded developer. I’m learning PHP, laravel and exploring  SQL to better understand full-stack workflows.</p>
+                  <p id='sd' className={`${pro ? 'prf_i' : ''} prf_head opacity-0 transition-all duration-[1s] ease-in-out delay-[400ms] text-[var(--grayM)] text-[14px] mb-[1.9rem] leading-[25px]`}>I’m a frontend developer with a sharp eye for clean, minimal UI. I love crafting intuitive user interfaces using HTML, CSS, JavaScript and React and I often lean into Tailwind CSS for fast and consistent styling.</p>
+                  <p className={`${pro ? 'prf_i' : ''} prf_head opacity-0 transition-all duration-[1s] ease-in-out delay-[600ms] text-[var(--grayM)] text-[14px] mb-[1.75rem] leading-[25px]`}>While frontend is where I started, I’m currently diving into backend development to become a more well-rounded developer. I’m learning PHP, laravel and exploring  SQL to better understand full-stack workflows.</p>
                </div>
             </section>
 
