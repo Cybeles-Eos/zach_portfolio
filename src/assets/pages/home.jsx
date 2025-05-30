@@ -75,7 +75,7 @@ function Home(){
             </section>
 
             <section className="about-me max-[650px]:gap-[3.5rem] max-w-[1350px] z-10 mt-[7rem] relative py-15 gap-[1rem] overflow-hidden mx-auto ">
-               <div ref={profile} className={`${pro ? 'prf_' : ''} transition ease-in-out duration-[1.8s] relative max-[650px]:left-[-4rem] opacity-[0] rotate-[-40deg] max-[800px]:left-[-9rem] h-[20rem]`}> {/*rotate-[-30deg]*/}
+               <div ref={profile} className={`${pro ? 'prf_' : ''} transition ease-in-out duration-[1.8s] relative max-[650px]:left-[-4rem] opacity-[0] rotate-[-30deg] max-[800px]:left-[-9rem] h-[20rem]`}> {/*rotate-[-30deg]*/}
                   <img src={me} className="absolute min-w-[9rem] left-[15rem] h-[9rem] top-[2rem] rounded-[20rem] z-10" alt="" />
                   <button onClick={handleCopy} id="myGmail" className="left-[10rem] bg-[var(--text-clr)] z-10 absolute bottom-2 text-[var(--bg-clr)] poppins_font h-[1.9rem] w-[10.5rem] rounded-[20rem] cursor-pointer text-[11px] py-[3px]">{buttonText}</button>
                   <img src={lineSp} className="absolute select-none z-0 top-[-3rem]  rotate-[-120deg] left-[-3rem] min-w-[24rem] h-[24rem] opacity-[50%]" alt="" />
